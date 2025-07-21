@@ -11,6 +11,7 @@ import TeacherPortal from './pages/TeacherPortal';
 import AdminPortal from './pages/AdminPortal';
 import LearningHub from './pages/LearningHub';
 import ARZone from './pages/ARZone';
+import LetterMatchingGame from './pages/LetterMatchingGame';
 import ProtectedRoute from './components/ProtectedRoute';
 import './index.css';
 
@@ -53,6 +54,14 @@ function App() {
                   element={
                     <ProtectedRoute role="parent">
                       <ARZone />
+                    </ProtectedRoute>
+                  } 
+                />
+                <Route 
+                  path="/letter-matching/:childId" 
+                  element={
+                    <ProtectedRoute role="parent">
+                      <LetterMatchingGame />
                     </ProtectedRoute>
                   } 
                 />

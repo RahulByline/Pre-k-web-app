@@ -202,7 +202,13 @@ const ChildDashboard: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
-                onClick={() => navigate(`/learning/${hub.id}/${child.id}`)}
+                onClick={() => {
+                  if (hub.id === 'literacy') {
+                    navigate(`/letter-matching/${child.id}`);
+                  } else {
+                    navigate(`/learning/${hub.id}/${child.id}`);
+                  }
+                }}
               >
                 <div className="text-center">
                   <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
